@@ -14,7 +14,6 @@ import {
   Heart,
   Eye,
   LogOut,
-  Sparkles,
   ChevronRight,
   Check,
 } from "lucide-react";
@@ -134,10 +133,9 @@ export default function ClientPortalPage() {
           {/* Client Portal Header Bar */}
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-8 border-b border-stone-800 gap-4 mb-12">
             <div className="space-y-1">
-              <div className="flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-emerald-400 font-mono">
-                <Shield className="w-3.5 h-3.5" />
-                <span>Verified Client Access</span>
-              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+                Verified Client Access
+              </p>
               <h1 className="font-serif text-3xl sm:text-4xl text-white font-normal">
                 {formData.name || "Elena & Marcus Thompson"}
               </h1>
@@ -285,10 +283,9 @@ export default function ClientPortalPage() {
           </div>
 
           <div className="space-y-1 pt-2">
-            <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.3em] text-blue-400 font-mono">
-              <Lock className="w-3 h-3" />
-              <span>Private Client Vault</span>
-            </div>
+            <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+              Private Client Vault
+            </p>
             <h1 className="font-serif text-2xl sm:text-3xl text-white font-normal">
               Access Your Gallery
             </h1>

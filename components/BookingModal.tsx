@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, CheckCircle2, Calendar, Sparkles } from "lucide-react";
+import { X, CheckCircle2, Calendar } from "lucide-react";
 import { FloatingInput, FloatingTextarea } from "./FloatingInput";
 
 interface BookingModalProps {
@@ -88,15 +88,17 @@ export default function BookingModal({
         ) : (
           <div className="space-y-6">
             <div className="space-y-2 border-b border-stone-800/80 pb-6">
-              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Private Commission</span>
-              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+                Private Commission
+              </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal">
                 Reserve Your Session
               </h2>
               <p className="text-xs text-stone-400 font-light">
-                Miracle Photography Studio • 227-12A Merrick Blvd, Laurelton, NY • (718) 341-7376
+                Miracle Photography Studio • 227-12A Merrick Blvd, Laurelton, NY •{" "}
+                <a href="tel:7183417376" className="text-stone-300 hover:text-white underline">
+                  (718) 341-7376
+                </a>
               </p>
             </div>
 
@@ -150,7 +152,7 @@ export default function BookingModal({
                     <option value="Weddings">Weddings &amp; Elopements</option>
                     <option value="Baby Portraits">Baby &amp; Newborn Portraits</option>
                     <option value="Events">Gala, Quinceañera &amp; Events</option>
-                    <option value="New Collection">Fine Art Editorial Portraits</option>
+                    <option value="Editorial Portraits">Fine Art Editorial Portraits</option>
                     <option value="Commercial">Commercial &amp; Brand</option>
                   </select>
                 </div>
@@ -194,7 +196,10 @@ export default function BookingModal({
               </div>
 
               <p className="text-center text-[10px] text-stone-500 font-mono uppercase tracking-wider">
-                Direct phone inquiries welcomed anytime: 718-341-7376
+                Direct phone inquiries welcomed anytime:{" "}
+                <a href="tel:7183417376" className="text-blue-400 hover:underline">
+                  718-341-7376
+                </a>
               </p>
             </form>
           </div>

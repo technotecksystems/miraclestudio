@@ -20,12 +20,9 @@ export default function Footer({ onOpenBooking }: FooterProps) {
             <p className="font-serif text-xl sm:text-2xl text-stone-200 font-light leading-relaxed max-w-lg">
               Preserving life&apos;s luminous milestones with editorial grace, timeless composure, and artistic reverence.
             </p>
-            <div className="flex items-center gap-3 pt-2">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs uppercase tracking-widest text-stone-400 font-mono">
-                Now Reserving 2025 – 2026 Celebrations &amp; Studio Sessions
-              </span>
-            </div>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono pt-2">
+              Now Reserving 2025 – 2026 Celebrations &amp; Studio Sessions
+            </p>
           </div>
 
           <div className="lg:col-span-6 flex flex-col justify-between space-y-8 lg:items-end">
@@ -147,10 +144,10 @@ export default function Footer({ onOpenBooking }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="/gallery?category=New+Collection"
+                  href="/gallery?category=Editorial+Portraits"
                   className="text-stone-300 hover:text-white transition-colors flex items-center justify-between"
                 >
-                  <span>New Fine Art Collection</span>
+                  <span>Editorial Portraits</span>
                   <span className="text-[10px] text-stone-600">04</span>
                 </Link>
               </li>

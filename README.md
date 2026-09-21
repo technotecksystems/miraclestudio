@@ -23,7 +23,7 @@
 - **Testimonial Strip**: Quotes from wedding couples, milestone families, and Manhattan gala organizers.
 
 ### 2. Curated Gallery (`/gallery`)
-- **Filter Tabs**: Real-time filtering across *Weddings*, *Baby Portraits*, *Events*, and *New Collection* with count badges.
+- **Filter Tabs**: Real-time filtering across *Weddings*, *Baby Portraits*, *Events*, and *Editorial Portraits* with count badges.
 - **Responsive Masonry Grid**: High-resolution photography with lazy loading and Next.js Image optimization.
 - **Fullscreen Lightbox**: Keyboard arrow navigation (`←`, `→`, `Esc`), shot details, and a direct *"Inquire About This Style"* booking trigger.
 

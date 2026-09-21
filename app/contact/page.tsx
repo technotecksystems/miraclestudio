@@ -7,7 +7,6 @@ import {
   Phone,
   Mail,
   Clock,
-  Sparkles,
   CheckCircle2,
   Send,
   Navigation,
@@ -53,10 +52,9 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Editorial Header */}
         <div className="max-w-3xl space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Connect With Our Studio</span>
-          </div>
+          <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+            Studio Inquiries
+          </p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white font-normal leading-[1.1]">
             Contact Us
           </h1>
@@ -215,9 +213,9 @@ export default function ContactPage() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div className="space-y-2">
-                    <span className="text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
+                    <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
                       Inquiry Dispatched
-                    </span>
+                    </p>
                     <h2 className="font-serif text-3xl sm:text-4xl text-white">
                       Thank You, {formData.fullName}
                     </h2>
@@ -235,9 +233,9 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2 pb-4 border-b border-stone-800/80">
-                    <span className="text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
+                    <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
                       Private Inquiry
-                    </span>
+                    </p>
                     <h2 className="font-serif text-2xl sm:text-3xl text-white font-normal">
                       Commission an Art Piece
                     </h2>
@@ -301,7 +299,7 @@ export default function ContactPage() {
                           <option value="Weddings">Weddings &amp; Elopements</option>
                           <option value="Baby Portraits">Baby &amp; Newborn Milestone</option>
                           <option value="Events">Galas &amp; Quinceañeras</option>
-                          <option value="New Collection">Fine Art Editorial Series</option>
+                          <option value="Editorial Portraits">Fine Art Editorial Series</option>
                           <option value="Commercial">Commercial &amp; Headshots</option>
                           <option value="General Inquiry">General Studio Inquiry</option>
                         </select>

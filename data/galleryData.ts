@@ -1,7 +1,7 @@
 export interface PhotoItem {
   id: string;
   title: string;
-  category: "Weddings" | "Baby Portraits" | "Events" | "New Collection";
+  category: "Weddings" | "Baby Portraits" | "Events" | "Editorial Portraits";
   image: string;
   aspect: "portrait" | "landscape" | "square";
   location?: string;
@@ -16,7 +16,7 @@ export const GALLERY_CATEGORIES = [
   "Weddings",
   "Baby Portraits",
   "Events",
-  "New Collection",
+  "Editorial Portraits",
 ] as const;
 
 export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
@@ -182,7 +182,7 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
   {
     id: "nc-1",
     title: "The Noir Glass Collection",
-    category: "New Collection",
+    category: "Editorial Portraits",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85",
     aspect: "portrait",
     location: "Miracle Editorial Bay",
@@ -194,7 +194,7 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
   {
     id: "nc-2",
     title: "Sovereign Light & Shadow",
-    category: "New Collection",
+    category: "Editorial Portraits",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=85",
     aspect: "portrait",
     location: "Miracle Editorial Bay",
@@ -206,7 +206,7 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
   {
     id: "nc-3",
     title: "Ethereal Mirage in Linen",
-    category: "New Collection",
+    category: "Editorial Portraits",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1600&q=85",
     aspect: "square",
     location: "Montauk Bluffs, NY",
@@ -217,7 +217,7 @@ export const GALLERY_PHOTOS: PhotoItem[] = [
   {
     id: "nc-4",
     title: "The Cinematic Silhouette",
-    category: "New Collection",
+    category: "Editorial Portraits",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=85",
     aspect: "landscape",
     location: "DUMBO Waterfront, Brooklyn",

@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { GALLERY_PHOTOS, GALLERY_CATEGORIES, PhotoItem, GalleryCategory } from "@/data/galleryData";
 import Lightbox from "@/components/Lightbox";
 import BookingModal from "@/components/BookingModal";
-import { Sparkles, Filter, Camera, ArrowRight, Eye } from "lucide-react";
+import { Camera, ArrowRight, Eye } from "lucide-react";
 
 function GalleryContent() {
   const searchParams = useSearchParams();
@@ -42,10 +42,9 @@ function GalleryContent() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Gallery Editorial Header */}
         <div className="max-w-3xl space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-            <Camera className="w-3.5 h-3.5" />
-            <span>Master Archives</span>
-          </div>
+          <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+            Master Archives
+          </p>
           <h1 className="font-serif text-4xl sm:text-6xl text-white font-normal leading-[1.1]">
             Curated Portfolios
           </h1>
@@ -111,8 +110,8 @@ function GalleryContent() {
                   "Pure, organic newborn and milestone portraiture in our Laurelton studio sanctuary."}
                 {activeCategory === "Events" &&
                   "High-profile galas, quinceañeras, and corporate celebrations captured with cinematic vibrancy."}
-                {activeCategory === "New Collection" &&
-                  "Our latest signature 2025 editorial series exploring sculptural chiaroscuro lighting."}
+                {activeCategory === "Editorial Portraits" &&
+                  "Our signature fine art editorial series exploring sculptural chiaroscuro lighting and modern executive poise."}
               </p>
             </div>
 
@@ -194,9 +193,9 @@ function GalleryContent() {
         {/* Gallery Bottom Studio Note & Inquire Banner */}
         <div className="mt-24 p-8 sm:p-12 bg-stone-900/60 border border-stone-800 text-stone-100 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 max-w-xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
-              Custom Prints &amp; Fine Art Albums
-            </span>
+            <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+              Archival Fine Art &amp; Albums
+            </p>
             <h3 className="font-serif text-2xl sm:text-3xl text-white">
               Every photograph is hand-finished for museum-grade permanence.
             </h3>

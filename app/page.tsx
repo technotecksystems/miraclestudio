@@ -11,7 +11,6 @@ import BookingModal from "@/components/BookingModal";
 import {
   ArrowRight,
   ArrowUpRight,
-  Sparkles,
   Camera,
   Heart,
   Award,
@@ -54,10 +53,9 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Accent Column */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                <span>Laurelton, New York</span>
-              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+                Laurelton, New York
+              </p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal leading-[1.15]">
                 Where genuine emotion meets editorial composure.
               </h2>
@@ -120,9 +118,9 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-stone-300/80 gap-6">
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase tracking-[0.25em] text-blue-700 font-mono">
+              <p className="text-xs uppercase tracking-[0.25em] text-stone-500 font-mono">
                 Curated Portfolios
-              </span>
+              </p>
               <h2 className="font-serif text-4xl sm:text-5xl text-stone-900 font-normal">
                 Featured Collections
               </h2>
@@ -163,8 +161,7 @@ export default function HomePage() {
                       {item.category}
                     </span>
                     <h4 className="font-serif text-lg leading-snug">{item.title}</h4>
-                    <p className="text-xs text-stone-300 font-light mt-1 flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-blue-300" />
+                    <p className="text-xs text-stone-300 font-light mt-1 flex items-center gap-1 font-mono uppercase tracking-wider">
                       <span>View in Lightbox</span>
                     </p>
                   </div>
@@ -215,10 +212,10 @@ export default function HomePage() {
                 Events &amp; Galas
               </Link>
               <Link
-                href="/gallery?category=New+Collection"
+                href="/gallery?category=Editorial+Portraits"
                 className="px-4 py-2 bg-stone-200/70 hover:bg-stone-900 hover:text-white transition-all"
               >
-                New Collection
+                Editorial Portraits
               </Link>
             </div>
           </div>
@@ -229,10 +226,9 @@ export default function HomePage() {
       <section className="py-24 sm:py-32 bg-stone-900 text-stone-100 border-y border-stone-800">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-10">
           <div className="space-y-4 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span>About Miracle Photography</span>
-            </div>
+            <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+              About Miracle Photography
+            </p>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal leading-tight">
               Crafting visual heirlooms in the heart of Laurelton.
             </h2>
@@ -295,9 +291,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-            <span className="text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
+            <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
               Client Acclaim
-            </span>
+            </p>
             <h2 className="font-serif text-4xl sm:text-5xl text-white font-normal">
               Words From Our Patrons
             </h2>
@@ -360,9 +356,9 @@ export default function HomePage() {
       <section className="relative py-20 bg-gradient-to-r from-blue-950 via-stone-950 to-blue-950 border-b border-stone-800 text-stone-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.3em] text-blue-400 font-mono">
-              Ready To Create Magic?
-            </span>
+            <p className="text-xs uppercase tracking-[0.25em] text-blue-400 font-mono">
+              Bespoke Commissions
+            </p>
             <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal">
               Let us preserve your next chapter with timeless grace.
             </h2>

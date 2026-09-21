@@ -28,7 +28,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "2",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2000&q=90",
-    category: "New Fine Art Collection",
+    category: "Editorial Portraits",
     tagline: "Sculpted by Light. Defined by Grace.",
     subtitle: "Masterful editorial studio portraiture celebrating human depth, poise, and individual legacy.",
     location: "Miracle Studio Suite",

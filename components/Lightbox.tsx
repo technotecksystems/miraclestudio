@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { PhotoItem } from "@/data/galleryData";
-import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Tag, Sparkles } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Tag } from "lucide-react";
 
 interface LightboxProps {
   photo: PhotoItem | null;
@@ -175,13 +175,15 @@ export default function Lightbox({
           <div className="pt-6 border-t border-stone-800/80 mt-6 space-y-2">
             <button
               onClick={() => onBookStyle?.(photo.category)}
-              className="w-full py-3 bg-stone-100 hover:bg-white text-stone-950 text-xs uppercase tracking-[0.2em] font-medium transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 bg-stone-100 hover:bg-white text-stone-950 text-xs uppercase tracking-[0.2em] font-medium transition-all text-center"
             >
-              <Sparkles className="w-3.5 h-3.5" />
               <span>Inquire About This Style</span>
             </button>
             <p className="text-[10px] text-stone-500 text-center font-mono uppercase tracking-wider">
-              Studio: 718-341-7376
+              Studio:{" "}
+              <a href="tel:7183417376" className="text-stone-400 hover:text-white underline">
+                718-341-7376
+              </a>
             </p>
           </div>
         </div>
