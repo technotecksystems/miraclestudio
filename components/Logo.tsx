@@ -15,20 +15,20 @@ export default function Logo({
 }: LogoProps) {
   const iconSizes = {
     sm: "w-8 h-8",
-    md: "w-10 h-10",
-    lg: "w-14 h-14",
+    md: "w-8 h-8 sm:w-10 sm:h-10",
+    lg: "w-12 h-12 sm:w-14 sm:h-14",
   };
 
   const textSizes = {
-    sm: "text-base tracking-[0.25em]",
-    md: "text-lg tracking-[0.28em]",
-    lg: "text-2xl tracking-[0.3em]",
+    sm: "text-sm sm:text-base tracking-[0.2em] sm:tracking-[0.25em]",
+    md: "text-base sm:text-lg tracking-[0.22em] sm:tracking-[0.28em]",
+    lg: "text-xl sm:text-2xl tracking-[0.25em] sm:tracking-[0.3em]",
   };
 
   const subtextSizes = {
-    sm: "text-[9px] tracking-[0.28em]",
-    md: "text-[10px] tracking-[0.32em]",
-    lg: "text-xs tracking-[0.36em]",
+    sm: "text-[8px] sm:text-[9px] tracking-[0.22em] sm:tracking-[0.28em]",
+    md: "text-[8.5px] sm:text-[10px] tracking-[0.24em] sm:tracking-[0.32em]",
+    lg: "text-[10px] sm:text-xs tracking-[0.28em] sm:tracking-[0.36em]",
   };
 
   return (

@@ -44,7 +44,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Brand Logo */}
           <Logo variant="light" size={scrolled ? "sm" : "md"} />
 
@@ -92,19 +92,19 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-3 md:hidden">
+          <div className="flex items-center space-x-2 sm:space-x-3 md:hidden">
             <button
               onClick={onOpenBooking}
-              className="text-[11px] uppercase tracking-wider px-3 py-1.5 bg-stone-100 text-stone-950 font-medium"
+              className="text-[10px] sm:text-[11px] uppercase tracking-wider px-2.5 sm:px-3 py-1.5 bg-stone-100 text-stone-950 font-medium whitespace-nowrap"
             >
               Book
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-stone-200 hover:text-white focus:outline-none"
+              className="p-1.5 sm:p-2 text-stone-200 hover:text-white focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
