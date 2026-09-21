@@ -111,24 +111,24 @@ export default function HeroCarousel({ onOpenBooking }: HeroCarouselProps) {
       <div className="relative z-20 flex-1 flex flex-col justify-center w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="w-full max-w-3xl">
           {/* Eyebrow Label: Dynamic category + Location (wraps cleanly, never clips) */}
-          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-mono text-blue-400 mb-3.5 sm:mb-4 max-w-full">
+          <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.25em] font-mono text-blue-400 mb-4 sm:mb-5 max-w-full">
             <span className="font-medium whitespace-normal">{activeSlide.category}</span>
             <span className="text-stone-500 font-sans">•</span>
             <span className="text-stone-300 font-light whitespace-normal">{activeSlide.location}</span>
           </div>
 
-          {/* Editorial Headline (Bold, confident, scaled for mobile to 36px while maintaining desktop grandeur) */}
-          <h1 className="font-serif text-[36px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[66px] text-white font-normal leading-[1.1] sm:leading-[1.08] tracking-tight mb-4 sm:mb-5 max-w-full break-words">
+          {/* Editorial Headline (Enlarged to 40px with generous leading for fine-art print presence) */}
+          <h1 className="font-serif text-[40px] sm:text-5xl md:text-6xl lg:text-[66px] xl:text-[72px] text-white font-normal leading-[1.14] sm:leading-[1.08] tracking-tight mb-4 sm:mb-6 max-w-full break-words">
             {activeSlide.tagline}
           </h1>
 
           {/* Subtext establishing studio's specialty - legible, not footnote-sized */}
-          <p className="text-sm sm:text-base lg:text-lg text-stone-300 font-light max-w-2xl leading-relaxed mb-6 sm:mb-8 line-clamp-3 sm:line-clamp-none">
+          <p className="text-[15px] sm:text-base lg:text-lg text-stone-300 font-light max-w-2xl leading-relaxed mb-6 sm:mb-8 line-clamp-3 sm:line-clamp-none">
             {activeSlide.subtitle}
           </p>
 
-          {/* CTA Buttons - Full-width stacked on mobile with generous spacing above */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto max-w-sm sm:max-w-none">
+          {/* CTA Buttons - Full-width stacked on mobile with generous spacing */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto max-w-sm sm:max-w-none">
             <Link
               href="/gallery"
               className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 bg-white hover:bg-stone-100 text-stone-950 text-xs uppercase tracking-[0.2em] font-medium transition-all shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] group"
@@ -143,6 +143,19 @@ export default function HeroCarousel({ onOpenBooking }: HeroCarouselProps) {
             >
               <span>Book a Session</span>
             </button>
+          </div>
+
+          {/* Supporting Heritage Divider & Pulse Indicator (Naturally bridges vertical space above bottom bar) */}
+          <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-stone-800/70 max-w-sm sm:max-w-md flex items-center justify-between text-[11px] font-mono text-stone-400">
+            <div className="flex items-center space-x-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span className="uppercase tracking-[0.2em] text-[10px] sm:text-[11px] text-stone-300">
+                Est. Serving Laurelton Families
+              </span>
+            </div>
+            <span className="text-stone-500 uppercase tracking-widest text-[9px] sm:text-[10px]">
+              Merrick Blvd Studio
+            </span>
           </div>
         </div>
       </div>
