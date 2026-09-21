@@ -1,0 +1,228 @@
+export interface PhotoItem {
+  id: string;
+  title: string;
+  category: "Weddings" | "Baby Portraits" | "Events" | "New Collection";
+  image: string;
+  aspect: "portrait" | "landscape" | "square";
+  location?: string;
+  year?: string;
+  description?: string;
+  tags?: string[];
+  featured?: boolean;
+}
+
+export const GALLERY_CATEGORIES = [
+  "All",
+  "Weddings",
+  "Baby Portraits",
+  "Events",
+  "New Collection",
+] as const;
+
+export type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
+
+export const GALLERY_PHOTOS: PhotoItem[] = [
+  // --- WEDDINGS ---
+  {
+    id: "w-1",
+    title: "The Hudson Valley Elopement",
+    category: "Weddings",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Hudson Valley, NY",
+    year: "2024",
+    description: "Golden hour vows framed by cascading botanical textures and timeless intimacy.",
+    tags: ["Ceremony", "Editorial", "Golden Hour"],
+    featured: true,
+  },
+  {
+    id: "w-2",
+    title: "Symphony in Ivory & Silk",
+    category: "Weddings",
+    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Long Island Estate, NY",
+    year: "2024",
+    description: "Bridal portrait highlighting artisanal embroidery and cathedral veil motion.",
+    tags: ["Bridal", "Fashion", "Fine Art"],
+    featured: true,
+  },
+  {
+    id: "w-3",
+    title: "Twilight First Dance",
+    category: "Weddings",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "Brooklyn Botanical Garden, NY",
+    year: "2024",
+    description: "Chandelier-lit ballroom first dance captured in pure cinematic romance.",
+    tags: ["Reception", "Black Tie", "Dance"],
+    featured: true,
+  },
+  {
+    id: "w-4",
+    title: "The Manor Terrace Embrace",
+    category: "Weddings",
+    image: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Old Westbury Gardens, NY",
+    year: "2023",
+    description: "Architectural grandeur paired with authentic emotional stillness.",
+    tags: ["Editorial", "Couples"],
+  },
+  {
+    id: "w-5",
+    title: "Whispers Before the Aisle",
+    category: "Weddings",
+    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "Oheka Castle, NY",
+    year: "2024",
+    description: "Intimate candid moment between the bride and bridal party before the walk.",
+    tags: ["Behind the Scenes", "Emotional"],
+  },
+
+  // --- BABY PORTRAITS ---
+  {
+    id: "b-1",
+    title: "Soft Morning Lullaby",
+    category: "Baby Portraits",
+    image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Miracle Studio Suite A",
+    year: "2024",
+    description: "Natural studio light highlighting the purest newborn slumber on organic knit wool.",
+    tags: ["Newborn", "Organic", "Studio Light"],
+    featured: true,
+  },
+  {
+    id: "b-2",
+    title: "First Steps & Wildflowers",
+    category: "Baby Portraits",
+    image: "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1600&q=85",
+    aspect: "square",
+    location: "Alley Pond Park, Queens",
+    year: "2024",
+    description: "One-year milestone outdoor session bathed in soft morning sun.",
+    tags: ["Milestone", "Outdoor", "Toddler"],
+    featured: true,
+  },
+  {
+    id: "b-3",
+    title: "Generations of Tenderness",
+    category: "Baby Portraits",
+    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Miracle Studio Suite B",
+    year: "2024",
+    description: "Mother and newborn bond captured with delicate monochrome depth.",
+    tags: ["Maternity", "Motherhood", "Monochrome"],
+  },
+  {
+    id: "b-4",
+    title: "Curious Hazel Gaze",
+    category: "Baby Portraits",
+    image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "Miracle Studio Suite A",
+    year: "2023",
+    description: "A portrait study of childhood curiosity and vibrant natural expression.",
+    tags: ["Portraiture", "Studio", "Eyes"],
+  },
+
+  // --- EVENTS ---
+  {
+    id: "e-1",
+    title: "The Gala Royale",
+    category: "Events",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "Plaza Hotel, Manhattan",
+    year: "2024",
+    description: "High-society charitable gala reception, champagne pyramids and luminous ballroom.",
+    tags: ["Black Tie", "Gala", "Celebration"],
+    featured: true,
+  },
+  {
+    id: "e-2",
+    title: "Golden Anniversary Soirée",
+    category: "Events",
+    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Garden City Club, NY",
+    year: "2024",
+    description: "Fifty years of love surrounded by three generations under sparkling bistro lights.",
+    tags: ["Anniversary", "Family", "Milestone"],
+    featured: true,
+  },
+  {
+    id: "e-3",
+    title: "Spring Vernissage & Cocktail",
+    category: "Events",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "Chelsea Arts District, NY",
+    year: "2024",
+    description: "Art gallery opening night with high energy, candid discussions, and warm mood lighting.",
+    tags: ["Art", "Candid", "Nightlife"],
+  },
+  {
+    id: "e-4",
+    title: "Quinceañera Rose Crown",
+    category: "Events",
+    image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Russo's On The Bay, Queens",
+    year: "2023",
+    description: "A milestone coming-of-age celebration filled with majesty, dance, and custom florals.",
+    tags: ["Quinceañera", "Celebration", "Heritage"],
+  },
+
+  // --- NEW COLLECTION ---
+  {
+    id: "nc-1",
+    title: "The Noir Glass Collection",
+    category: "New Collection",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Miracle Editorial Bay",
+    year: "2025",
+    description: "Sculptural lighting on high-contrast fashion editorial. Our latest signature portrait style.",
+    tags: ["Editorial", "High Fashion", "Studio Signature"],
+    featured: true,
+  },
+  {
+    id: "nc-2",
+    title: "Sovereign Light & Shadow",
+    category: "New Collection",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=85",
+    aspect: "portrait",
+    location: "Miracle Editorial Bay",
+    year: "2025",
+    description: "Executive and artist fine-art portraiture blending chiaroscuro depth with modern grace.",
+    tags: ["Executive", "Fine Art", "Portrait"],
+    featured: true,
+  },
+  {
+    id: "nc-3",
+    title: "Ethereal Mirage in Linen",
+    category: "New Collection",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1600&q=85",
+    aspect: "square",
+    location: "Montauk Bluffs, NY",
+    year: "2025",
+    description: "Warm ocean wind and minimalist styling captured on 35mm medium-format aesthetic.",
+    tags: ["Destination", "Minimalist", "Natural Light"],
+  },
+  {
+    id: "nc-4",
+    title: "The Cinematic Silhouette",
+    category: "New Collection",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=85",
+    aspect: "landscape",
+    location: "DUMBO Waterfront, Brooklyn",
+    year: "2025",
+    description: "Golden Manhattan skyline backdrop framing an evocative couple's twilight silhouette.",
+    tags: ["Couples", "Sunset", "NYC Skyline"],
+  },
+];
