@@ -1,31 +1,24 @@
 "use client";
 
-import { useState, useMemo, useEffect, Suspense } from "react";
+import { useState, useMemo, Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { GALLERY_PHOTOS, GALLERY_CATEGORIES, PhotoItem, GalleryCategory } from "@/data/galleryData";
 import Lightbox from "@/components/Lightbox";
 import BookingModal from "@/components/BookingModal";
-import { Camera, ArrowRight, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 
 function GalleryContent() {
   const searchParams = useSearchParams();
-  const initialCategory = (searchParams.get("category") as GalleryCategory) || "All";
+  const categoryFromUrl = searchParams.get("category") as GalleryCategory | null;
+  const validUrlCategory = categoryFromUrl && GALLERY_CATEGORIES.includes(categoryFromUrl) ? categoryFromUrl : null;
 
-  const [activeCategory, setActiveCategory] = useState<GalleryCategory>(
-    GALLERY_CATEGORIES.includes(initialCategory) ? initialCategory : "All"
-  );
+  const [selectedCategory, setSelectedCategory] = useState<GalleryCategory | null>(null);
+  const activeCategory = selectedCategory ?? validUrlCategory ?? "All";
+
   const [selectedPhoto, setSelectedPhoto] = useState<PhotoItem | null>(null);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [sessionToBook, setSessionToBook] = useState("Weddings");
-
-  // Sync state if URL query param updates
-  useEffect(() => {
-    const cat = searchParams.get("category") as GalleryCategory;
-    if (cat && GALLERY_CATEGORIES.includes(cat)) {
-      setActiveCategory(cat);
-    }
-  }, [searchParams]);
 
   const filteredPhotos = useMemo(() => {
     if (activeCategory === "All") return GALLERY_PHOTOS;
@@ -67,7 +60,7 @@ function GalleryContent() {
                 return (
                   <button
                     key={category}
-                    onClick={() => setActiveCategory(category)}
+                    onClick={() => setSelectedCategory(category)}
                     className={`relative whitespace-nowrap px-4 sm:px-5 py-2 text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 flex items-center gap-2 ${
                       isActive
                         ? "bg-white text-stone-950 shadow-md"
@@ -95,10 +88,10 @@ function GalleryContent() {
 
         {/* Category Intro Teaser Card */}
         {activeCategory !== "All" && (
-          <div className="mb-10 p-6 bg-stone-900/40 border border-stone-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-blue-400 font-mono mb-1">
-                Category Focus
+          <div className="mb-10 p-6 sm:p-8 bg-stone-900/70 border border-stone-800 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-1">
+              <p className="text-[10px] uppercase tracking-[0.25em] text-blue-400 font-mono">
+                Featured Portfolio Focus
               </p>
               <h3 className="font-serif text-xl text-white">
                 {activeCategory} Portfolio
@@ -126,7 +119,7 @@ function GalleryContent() {
 
         {/* Masonry / Responsive Photo Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredPhotos.map((photo, index) => {
+          {filteredPhotos.map((photo) => {
             const isTall = photo.aspect === "portrait";
 
             return (

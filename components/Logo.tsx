@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface LogoProps {
   className?: string;
   variant?: "light" | "dark" | "auto";
@@ -31,9 +33,18 @@ export default function Logo({
     lg: "text-[10px] sm:text-xs tracking-[0.28em] sm:tracking-[0.36em]",
   };
 
+  const handleClick = (e: React.MouseEvent) => {
+    // If already on the landing page, force reload as requested; otherwise navigate
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
+
   return (
-    <a
+    <Link
       href="/"
+      onClick={handleClick}
       className={`group inline-flex items-center gap-3 transition-opacity hover:opacity-95 ${className}`}
       aria-label="Miracle Photography Studio - Home"
     >
@@ -188,6 +199,6 @@ export default function Logo({
           </span>
         </div>
       )}
-    </a>
+    </Link>
   );
 }

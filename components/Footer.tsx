@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { Phone, MapPin, Mail, Clock, ArrowUpRight, Share2 } from "lucide-react";
+import { Phone, MapPin, Mail, Clock, ArrowUpRight } from "lucide-react";
 import { FacebookIcon, InstagramIcon } from "./SocialIcons";
 
 interface FooterProps {

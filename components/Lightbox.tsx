@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import { PhotoItem } from "@/data/galleryData";
-import { X, ChevronLeft, ChevronRight, MapPin, Calendar, Tag } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, MapPin, Calendar } from "lucide-react";
 
 interface LightboxProps {
   photo: PhotoItem | null;
@@ -20,6 +20,20 @@ export default function Lightbox({
   onSelectPhoto,
   onBookStyle,
 }: LightboxProps) {
+  const currentIndex = photo ? photos.findIndex((p) => p.id === photo.id) : -1;
+
+  const handlePrev = useCallback(() => {
+    if (currentIndex === -1 || photos.length === 0) return;
+    const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
+    onSelectPhoto(photos[prevIndex]);
+  }, [currentIndex, photos, onSelectPhoto]);
+
+  const handleNext = useCallback(() => {
+    if (currentIndex === -1 || photos.length === 0) return;
+    const nextIndex = (currentIndex + 1) % photos.length;
+    onSelectPhoto(photos[nextIndex]);
+  }, [currentIndex, photos, onSelectPhoto]);
+
   useEffect(() => {
     if (!photo) return;
 
@@ -37,19 +51,9 @@ export default function Lightbox({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "auto";
     };
-  }, [photo, photos]);
+  }, [photo, handleNext, handlePrev, onClose]);
 
   if (!photo) return null;
-
-  const currentIndex = photos.findIndex((p) => p.id === photo.id);
-  const handlePrev = () => {
-    const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
-    onSelectPhoto(photos[prevIndex]);
-  };
-  const handleNext = () => {
-    const nextIndex = (currentIndex + 1) % photos.length;
-    onSelectPhoto(photos[nextIndex]);
-  };
 
   return (
     <div

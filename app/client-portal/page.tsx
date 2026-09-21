@@ -5,16 +5,10 @@ import Image from "next/image";
 import Logo from "@/components/Logo";
 import { FloatingInput } from "@/components/FloatingInput";
 import {
-  Lock,
   Unlock,
-  Key,
-  Shield,
   Download,
-  Share2,
   Heart,
-  Eye,
   LogOut,
-  ChevronRight,
   Check,
 } from "lucide-react";
 

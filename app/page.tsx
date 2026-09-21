@@ -4,27 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import HeroCarousel from "@/components/HeroCarousel";
-import { GALLERY_PHOTOS } from "@/data/galleryData";
+import { GALLERY_PHOTOS, PhotoItem } from "@/data/galleryData";
 import { TESTIMONIALS } from "@/data/testimonials";
 import Lightbox from "@/components/Lightbox";
 import BookingModal from "@/components/BookingModal";
 import {
   ArrowRight,
-  ArrowUpRight,
-  Camera,
-  Heart,
-  Award,
-  ShieldCheck,
-  CheckCircle2,
   MapPin,
-  Phone,
   ChevronLeft,
   ChevronRight,
   Quote,
 } from "lucide-react";
 
 export default function HomePage() {
-  const [selectedPhoto, setSelectedPhoto] = useState<any | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<PhotoItem | null>(null);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedSessionType, setSelectedSessionType] = useState("Weddings");
   const [activeTestimonial, setActiveTestimonial] = useState(0);

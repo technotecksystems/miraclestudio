@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { Menu, X, Phone, Calendar, ArrowRight } from "lucide-react";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
 
 interface NavbarProps {
   onOpenBooking?: () => void;
@@ -29,11 +29,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
 
   return (
     <>
@@ -130,6 +125,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
                 <Link
                   key={link.name}
                   href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`text-2xl font-serif tracking-wide py-2 border-b border-stone-800/60 flex items-center justify-between ${
                     isActive ? "text-blue-400 font-normal pl-2" : "text-stone-300"
                   }`}

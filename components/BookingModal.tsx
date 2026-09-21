@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, CheckCircle2, Calendar } from "lucide-react";
+import { X, CheckCircle2 } from "lucide-react";
 import { FloatingInput, FloatingTextarea } from "./FloatingInput";
 
 interface BookingModalProps {
